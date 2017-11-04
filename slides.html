@@ -227,13 +227,6 @@
       </script>
     </section>
 
-<!--
-TODO
-TERMINAL
--What is Terminal
--How to access
--Useful commands and tricks
--->
     <section class="slide" data-markdown>
       <script type="text/template">
         #The Command Line
@@ -243,6 +236,7 @@ TERMINAL
         Before these existed, people used **command-line interfaces (CLIs)**.
 
         Instead of clicking on icons and dragging files around, commands are issued to the computer via text instructions
+		
       </script>
     </section>
 
@@ -250,54 +244,57 @@ TERMINAL
       <script type="text/template">
         #Some Command Line Basics
 
-        Starting Command Line
+        **Starting Command Line**
 
-        | Platform | Instruction |
+        | Windows | Mac |
         |---|---|
-        |Mac|**Applications > Utilities > Terminal**|
-        |Windows|**Run > cmd**|
+        |Start Menu > Run > cmd|Applications > Utilities > Terminal|
 
-        Useful Commands
+        **Useful Commands**
 
         |Action| Mac | Windows|
         |---|:---|:---|
-        |Show current location|`pwd`|`pwd`|
+        |Show current location|`pwd`|`cd`|
         |Show folder contents| `ls` |`dir`|
         |Change folder|`cd` *destination*|`dir` *destination*|
-        |Start Interactive Ruby|`irb`|`irb`|
         |Run a Ruby program|`ruby` *file*.rb|`ruby` *file*.rb|
 
-        Other Useful Tips
+        **Other Useful Tips**
 
-        *   The **Tab** key will auto-complete a partially-typed folder or file name
-        *   Always make sure you&rsquo;re in the right folder
-        *   Check that `irb` is not active before trying to run a ruby program
+        *   The **Tab** key will auto-complete a partially-typed folder or file name 
+        *   **Ctrl+C** clears a whole line 
+        *   Always make sure you&rsquo;re in the right folder when running a program
+		
+        ###Resources
+        * [Don't Fear the Command Line](http://readwrite.com/2014/07/18/command-line-tutorial-intro)
+        * [Codecademy: Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
 
       </script>
     </section>
 
     <section class="slide irb" data-markdown>
       <script type="text/template">
-        #Interactive Ruby (IRB)
-
-        The *console* is an interactive tool used to test and debug code.
-        Let&rsquo;s open IRB in the *console*:
-
-        | Windows  |  Mac |
+		#Interactive Ruby (IRB)
+		
+		IRB is a tool that takes code one line at a time and gives a result immediately
+		
+		|Windows|Mac|
         |---|---|
-        | Open Interactive Ruby from the Ruby section of your Start Menu.  | Open **Applications > Utilities > Terminal**. <br>Type `irb` and hit enter. |
-
-        Now that it's open and running in the console, you'll see this:
-        ```ruby
-        irb(main):001:0>
-        ```
-
-        Type your instructions at the end of the line (with the quotes):
-
-        ```ruby
-        irb(main):001:0> "Hello!"
-        ```
-        The command (instruction) you input will get *evaluated* and a value is returned back to you.
+		|Start Menu > Ruby > Interactive Ruby|Run `irb` on command line|
+		|||
+		
+		Now that it's open and running, you'll see this:
+		
+		```ruby 
+		irb(main):001:0>
+		```
+        
+		Type your instruction at the end of the line (with the quotes):
+		
+		```ruby
+		irb(main):001:0> "Hello!"
+		```
+		The instruction (code) you input will get *evaluated* and a value is returned back to you.
       </script>
     </section>
 
@@ -337,7 +334,7 @@ TERMINAL
       <script type="text/template">
         #Data Types
 
-        We just used the *integer* number **class** but there are many more.
+        We just used the *integer* number **class**, but there are many more.
 
         * Integer/Fixnum (whole numbers)
         * Float (numbers containing decimals)
@@ -398,9 +395,9 @@ TERMINAL
         In programming, we usually want to store a value to use later.
         **Variables** store data in your computer&rsquo;s memory.
 
-        Use a **variable name** to fetch their value (kind of like a bookmark in a book). The equal (`=`) symbol *assigns* a value to a variable.
+        Use equal (`=`) symbol to *assign* a value to a variable name. Use the variable name again to access it
 
-        Let's go over these example:
+        Let's go over some examples:
 
         ```ruby
         irb(main):001:0> x = 5
@@ -452,26 +449,35 @@ TERMINAL
       </script>
     </section>
 
-    <section class="slide no-bullet-list" data-markdown>
+<!--
+How it's made, assembly line clip
+-->
+	
+    <section class="slide" data-markdown>
       <script type="text/template">
-        #Functions
+		#Functions
 
-        * Functions are bundles of instructions that can be re-used
-          * Defined by wrapping the instructions between `def` and `end`
-          * Directly after `def` is the name of the function
-        * Function can take **arguments** and **return** values
-          * After the function name, **arguments** are defined in parentheses, `()`
-        * Functions always `return` 1 thing or a set of things
-
-        ```ruby
-        def functionName(arg1, arg2)
-          set of instructions
-          return answer
-        end
+		Functions are bundles of code that can be re-used. Think of them as a set of instructions that you can easily ask Ruby to follow.
+		
+		Here's the general structure 
+		
+		```ruby
+			def functionName (arg1, arg2)
+			  *do some stuff here*
+			  return something
+			end
         ```
+		
+		* Created by wrapping code between `def` and `end`
+		* Directly after `def` is the name of the function. Function names follow the same rules variables
+		* **Arguments** are data given in parentheses the function uses to do work
+		* The **Return Value** is a result the function produces after it's done
+		
       </script>
     </section>
 
+	
+	
     <section class="slide" data-markdown>
       <script type="text/template">
         #Define the function
@@ -506,36 +512,24 @@ TERMINAL
         irb(main):001:0> add(3, 4)
         => 7
         ```
-        We won't create our own functions in today's exercises, but we'll use those provided by ruby and its libraries.
       </script>
     </section>
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Outputting values: `puts`
-
-        The `puts` **function** outputs values to the screen.
-
-        Reminder, use of quotes for *string* data types.
-
-        ```
-        irb(main):001:0> puts "Hello World!"
-        Hello World!
-        => nil
-        ```
-
-        ```
-        irb(main):001:0> puts 2 + 2
-        4
-        => nil
-        ```
+        #Built-in Functions
+		
+        Ruby comes with a whole set of predefined functions.  These are sets of code that are so regularly used by most programmers that it makes sense for them to be part of the programming language itself.
+        
+        These functions are sometimes called and used a bit differently than functions you write yourself.
+		
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Outputting values: `print`
+        #Putting values on the screen: `puts` and `print`
 
-        The function `print` can also be used to output values.
+        To use these functions, simply type either `puts` or `print` and then the data you want to show. 
 
         The difference between `puts` and `print` is `puts` adds a new line to end of the output and `print` does not.
 
@@ -582,9 +576,7 @@ TERMINAL
       <script type="text/template">
         #Concatenation
 
-        Ruby comes with a whole set of predefined functions.  These are sets of code that are so regularly used by most programmers that it makes sense for them to be part of the programming language itself.
-
-        One such function is **concatenation**. With this we can "add" strings together. We call this function using the `+` symbol.
+        Another useful function is **concatenation**. With this we can "add" strings together. We call this function using the `+` symbol.
 
         ```
         irb(main):001:0> print "Ladies " + "Learning " + "Code"
@@ -637,6 +629,7 @@ TERMINAL
         ```
         `to_i` is another predefined function in Ruby.
         It converts a string to an integer.
+		
       </script>
     </section>
 
@@ -644,12 +637,18 @@ TERMINAL
       <script type="text/template">
         #Dot Notation
 
-        The most common way we call functions is with **dot notation**.
+        The data conversion functions are example of using **dot notation** for calling functions.
 
-        In other words, add a period, then the function name *after* the object you want to call it on.
+        In other words, add a period then the function name *after* the object you want to call it on.
 
-        For example:
+        Class Checks
 
+        ```ruby
+        "Hello!".class
+        ```
+		
+        Typecasting 
+		
         ```ruby
         "5".to_i
         ```
@@ -658,15 +657,15 @@ TERMINAL
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Numbers
+        #Return to division
 
-        Now try dividing 2 numbers and see what value gets returned:
+        Here's what happened before:
 
         ```
         irb(main):001:0> print 1 / 2
         0 => nil
         ```
-        This happens because Ruby sees 2 integers and will return an integer. Integer **classes** don&rsquo;t have decimal parts, so it must be converted to **floats**, since this number **class** can handle decimals.
+        This happens because Ruby sees 2 integers and will return an integer. Integer **classes** don&rsquo;t have decimal places, so the numbers must be converted to **floats** instead.
 
         Use dot notation and the `.to_f` function.
         ```
@@ -700,6 +699,10 @@ TERMINAL
 
       </script>
     </section>
+	
+	<!-- 
+	Consider adding recap function types
+	-->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -720,9 +723,9 @@ TERMINAL
       <script type="text/template">
         #Working with user input
 
-        So far, we&rsquo;ve used the console to output message on the screen. Now let's write a program that can say hello to anyone!
+        So far, we&rsquo;ve used the console to output message on the screen ourselves. Now let's write a program that can say hello to anyone!
 
-        Use the `gets` method to receive data typed into the console. Then you'll see a blank line and the cursor. Type your name in the blank line.
+        Use the `gets` function to receive data typed into the console. Then you'll see a blank line and the cursor. Type your name in the blank line.
 
         ```ruby
         irb(main):001:0> gets
@@ -740,7 +743,7 @@ TERMINAL
       <script type="text/template">
         #Working with user input: Variables
 
-        Generally, we set the value returned by `gets` to a **variable**.
+        We've grabbed some data from the user, but we haven't put it anywhere. For it to be useful, we store what we got into a **variable**.
 
         ```ruby
         # Set variable 'name' to value of 'gets'
@@ -769,7 +772,7 @@ TERMINAL
         #What is `\n`?
 
         `\n` is Ruby's way of putting a *new line* after the input.
-        Use the method `chomp` to remove the last character of a string.
+        Use the `chomp` function to remove the last character of a string.
 
         Let's create a program in the console that will remove the `\n` character.
 
@@ -848,9 +851,6 @@ Mini tutorial of how it works
 
     <!-- -------------------- -->
     <!-- Exercise 1: Hello World -->
-
-<!--Add references to relevant early slide sections-->
-
     <!-- -------------------- -->
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -883,6 +883,10 @@ Mini tutorial of how it works
       </script>
     </section>
 
+	<!--TO DO
+	Reference examples for changing directory 
+	-->
+	
     <section class="slide" data-markdown>
       <script type="text/template">
         #But how do we run this file?
@@ -961,24 +965,14 @@ Mini tutorial of how it works
     <section class="slide" data-markdown>
       <script type="text/template">
         # Conditionals &amp; Logic
-        * The program we just wrote ran straight from top to bottom
-        * What if the program could act differently and decide what to do?
-        * Use conditionals like an `if` statement
-        * Each `if` statement contains a test, and the indented block is the code that will run if the test is `true` but not if it is `false` and looks something like this:
-
+        The program we just wrote ran straight from top to bottom. What if the program could act differently depending on what data it gets?
+        
+        We can ask Ruby to make decisions using **conditionals**. 
+        
+        Here's the basic structure: 
+		
         ```ruby
         # Not real code
-        if it is cold outside
-            wear a sweater
-        else
-            dress normally :)
-        end
-        ```
-
-        You can also have more than one condition.
-
-        ```ruby
-        # Still not real code
         if it is cold outside
             wear a sweater
         elsif it is raining
@@ -987,6 +981,11 @@ Mini tutorial of how it works
             dress normally :)
         end
         ```
+
+        * The `if` statement contains a check. The indented block of code will run if the check passes (`true`), but be ignored it if it doesn't (`false`)
+        * `elsif` are more `if` checks. Ruby only runs the **first** `if` or `elsif` that passes and ignores the rest.
+        * However, if all of our `if` and `elsif` checks fail, we can add an `else` statement. This block of code is run as a last resort.
+        * Finally, we wrap things up with an `end` to let Ruby know we're done checking for conditional statements
       </script>
     </section>
 
@@ -1010,6 +1009,7 @@ Mini tutorial of how it works
         => true
         ```
         We can use these *statements* with our `if` values to test the weather conditions.
+		
       </script>
     </section>
 
@@ -1023,12 +1023,21 @@ Mini tutorial of how it works
 
         Open the file `ex2_weather_advice.rb` in the **exercise** folder and follow the instructions in the file.
 
-        The code snippet in the next slide contains the solution but try to use it as a reference, rather than copy-paste, to understand each line as you type it.
+        The code snippet in the next slide contains the solution, but try to use it for hints, rather than copy-pasting, to understand each line as you type it.
 
         Try running your file a few times to get different advice (the weather is so unpredictable!)
 
         **Bonus: ** Update the conditions or add more conditions.
+		
+        ---
+		
+        ###Resource Slides
+        * [Putting Values on the Screen](#slide27)
+        * [Working with User Input](#slide36)
+        * [Conditionals & Logic](#slide44)
+		
       </script>
+	  <a href="www.google.com">Trudy MacNabb</a>
     </section>
 
     <section class="slide" data-markdown>
@@ -1279,15 +1288,8 @@ Mini tutorial of how it works
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        #![Bey and Nick hamburger](http://data.whicdn.com/images/179079768/large.gif)
-        # Lunch!
-      </script>
-    </section>
-
 <!-- ==================== -->
-<!-- Afternoon Content-->
+<!-- Second Session-->
 <!-- ==================== -->
 
     <section class="slide" data-markdown>
