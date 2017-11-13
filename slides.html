@@ -240,7 +240,7 @@ Slide about arrays
         Before these existed, people used **command-line interfaces (CLIs)**.
 
         Instead of clicking on icons and dragging files around, commands are issued to the computer via text instructions
-		
+
       </script>
     </section>
 
@@ -260,15 +260,15 @@ Slide about arrays
         |---|:---|:---|
         |Show current location|`pwd`|`cd`|
         |Show folder contents| `ls` |`dir`|
-        |Change folder|`cd` *destination*|`dir` *destination*|
+        |Change folder|`cd` *destination*|`cd` *destination*|
         |Run a Ruby program|`ruby` *file*.rb|`ruby` *file*.rb|
 
         **Other Useful Tips**
 
-        *   The **Tab** key will auto-complete a partially-typed folder or file name 
-        *   **Ctrl+C** clears a whole line 
+        *   The **Tab** key will auto-complete a partially-typed folder or file name
+        *   **Ctrl+C** clears a whole line
         *   Always make sure you&rsquo;re in the right folder when running a program
-		
+
         ###Resources
         * [Don't Fear the Command Line](http://readwrite.com/2014/07/18/command-line-tutorial-intro)
         * [Codecademy: Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
@@ -279,22 +279,22 @@ Slide about arrays
     <section class="slide irb" data-markdown>
       <script type="text/template">
 		#Interactive Ruby (IRB)
-		
+
 		IRB is a tool that takes code one line at a time and gives a result immediately
-		
+
 		|Windows|Mac|
         |---|---|
 		|Start Menu > Ruby > Interactive Ruby|Run `irb` on command line|
 		|||
-		
+
 		Now that it's open and running, you'll see this:
-		
-		```ruby 
+
+		```ruby
 		irb(main):001:0>
 		```
-        
+
 		Type your instruction at the end of the line (with the quotes):
-		
+
 		```ruby
 		irb(main):001:0> "Hello!"
 		```
@@ -418,6 +418,11 @@ Slide about arrays
         You can store almost anything in a variable.
       </script>
     </section>
+<!-- Todo
+Variable names
+Cannot be certain keywords
+
+-->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -456,32 +461,32 @@ Slide about arrays
 <!--
 How it's made, assembly line clip
 -->
-	
+
     <section class="slide" data-markdown>
       <script type="text/template">
 		#Functions
 
 		Functions are bundles of code that can be re-used. Think of them as a set of instructions that you can easily ask Ruby to follow.
-		
-		Here's the general structure 
-		
+
+		Here's the general structure
+
 		```ruby
 			def functionName (arg1, arg2)
 			  *do some stuff here*
 			  return something
 			end
         ```
-		
+
 		* Created by wrapping code between `def` and `end`
 		* Directly after `def` is the name of the function. Function names follow the same rules variables
 		* **Arguments** are data given in parentheses the function uses to do work
 		* The **Return Value** is a result the function produces after it's done
-		
+
       </script>
     </section>
 
-	
-	
+
+
     <section class="slide" data-markdown>
       <script type="text/template">
         #Define the function
@@ -521,11 +526,11 @@ How it's made, assembly line clip
     <section class="slide" data-markdown>
       <script type="text/template">
         #Built-in Functions
-		
+
         Ruby comes with a whole set of predefined functions.  These are sets of code that are so regularly used by most programmers that it makes sense for them to be part of the programming language itself.
-        
+
         These functions are sometimes called and used a bit differently than functions you write yourself.
-		
+
       </script>
     </section>
 
@@ -533,7 +538,7 @@ How it's made, assembly line clip
       <script type="text/template">
         #Putting values on the screen: `puts` and `print`
 
-        To use these functions, simply type either `puts` or `print` and then the data you want to show. 
+        To use these functions, simply type either `puts` or `print` and then the data you want to show.
 
         The difference between `puts` and `print` is `puts` adds a new line to end of the output and `print` does not.
 
@@ -633,7 +638,7 @@ How it's made, assembly line clip
         ```
         `to_i` is another predefined function in Ruby.
         It converts a string to an integer.
-		
+
       </script>
     </section>
 
@@ -650,9 +655,9 @@ How it's made, assembly line clip
         ```ruby
         "Hello!".class
         ```
-		
-        Typecasting 
-		
+
+        Typecasting
+
         ```ruby
         "5".to_i
         ```
@@ -703,8 +708,8 @@ How it's made, assembly line clip
 
       </script>
     </section>
-	
-	<!-- 
+
+	<!--
 	Consider adding recap function types
 	-->
 
@@ -888,9 +893,9 @@ Mini tutorial of how it works
     </section>
 
 	<!--TO DO
-	Reference examples for changing directory 
+	Reference examples for changing directory
 	-->
-	
+
     <section class="slide" data-markdown>
       <script type="text/template">
         #But how do we run this file?
@@ -970,11 +975,11 @@ Mini tutorial of how it works
       <script type="text/template">
         # Conditionals &amp; Logic
         The program we just wrote ran straight from top to bottom. What if the program could act differently depending on what data it gets?
-        
-        We can ask Ruby to make decisions using **conditionals**. 
-        
-        Here's the basic structure: 
-		
+
+        We can ask Ruby to make decisions using **conditionals**.
+
+        Here's the basic structure:
+
         ```ruby
         # Not real code
         if it is cold outside
@@ -1013,7 +1018,7 @@ Mini tutorial of how it works
         => true
         ```
         We can use these *statements* with our `if` values to test the weather conditions.
-		
+
       </script>
     </section>
 
@@ -1032,14 +1037,14 @@ Mini tutorial of how it works
         Try running your file a few times to get different advice (the weather is so unpredictable!)
 
         **Bonus: ** Update the conditions or add more conditions.
-		
+
         ---
-		
+
         ###Resource Slides
         * [Putting Values on the Screen](#slide27)
         * [Working with User Input](#slide36)
         * [Conditionals & Logic](#slide44)
-		
+
       </script>
 	  <a href="www.google.com">Trudy MacNabb</a>
     </section>
@@ -1160,7 +1165,7 @@ Mini tutorial of how it works
 
       </script>
     </section>
-	
+
     <!-- TODO: If we have time, create an example using a numeric temperature value to decide what's cold, normal or too hot to handle -->
 
     <section class="slide" data-markdown>
