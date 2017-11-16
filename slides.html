@@ -715,21 +715,6 @@ How it's made, assembly line clip
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Pro Tip! Use Comments
-
-        * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
-        * Good comments add information that isn&rsquo;t immediately obvious
-        * You&rsquo;ll see more comments throughout the exercises
-        * Feel free to add your own!
-
-        ```
-        # ruby will ignore anything after the # symbol
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
         #Working with user input
 
         So far, we&rsquo;ve used the console to output message on the screen ourselves. Now let's write a program that can say hello to anyone!
@@ -776,50 +761,26 @@ How it's made, assembly line clip
       </script>
     </section>
 
+<!--TODO
+Chaining functions
+-->
     <section class="slide" data-markdown>
       <script type="text/template">
         #What is `\n`?
 
-        `\n` is Ruby's way of putting a *new line* after the input.
-        Use the `chomp` function to remove the last character of a string.
+        `\n` is Ruby's way of representing a *new line* after the input.
 
-        Let's create a program in the console that will remove the `\n` character.
-
-        1.&nbsp;Give a `puts` message to let your user know what you&rsquo;re looking for.
-        ```ruby
-        irb(main):001:0> puts "What is your name?"
-        ```
-        ```ruby
-        #outputs:
-        What is your name?
-        => nil
-        ```
-
-        2.&nbsp;Define a `name` variable and assign the value of `gets` to it.
-        Add `chomp` to remove the new line character.
-        ```ruby
-        irb(main):001:0> name = gets.chomp
-        ```
-
-        3.&nbsp;Type your name in the blank line and hit the **enter** key. The value will be  *returned* to you.
-
-        ```
-        irb(main):001:0> name = gets.chomp
-        Sarah
-        => "Sarah"
-        ```
-
-        4.&nbsp;Type the variable `name` and **enter**.
+        The `chomp` function gets rid of any new lines in a string.
 
         ```ruby
-        irb(main):001:0> name
-        => "Sarah"
+        irb(main):001:0> name = gets
+        Archibald
+        => "Archibald\n"
+        irb(main):001:0> name.chomp
+        => "Archibald"
         ```
-
-        The name *value* is now assigned to the *variable* and will return without the `\n` character!
       </script>
     </section>
-
 <!--
 Working with programs in files
 Difference between irb and running a file with Ruby
@@ -913,6 +874,7 @@ Mini tutorial of how it works
       </script>
     </section>
 
+
     <section class="slide" data-markdown>
       <script type="text/template">
         # Class Exercise 1: Hello World (part 2)
@@ -966,6 +928,22 @@ Mini tutorial of how it works
         You can run your program as many times as you like by repeating the steps above. Or try changing the greeting in the **hello.rb** file!
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Pro Tip! Use Comments
+
+        * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
+        * Good comments add information that isn&rsquo;t immediately obvious
+        * You&rsquo;ll see more comments throughout the exercises
+        * Feel free to add your own!
+
+        ```
+        # ruby will ignore anything after the # symbol
+        ```
+      </script>
+    </section>
+
 
 <!-- -------------------- -->
 <!-- Conditionals & Booleans -->
@@ -1519,9 +1497,6 @@ Mini tutorial of how it works
         * Find the average of "One bedroom units" in a province of your choice.
         * Find the difference in pricing for "One bedroom units" in the 1980s versus the 1990s in that area.
 
-        **Bonus Exercise**: Use **selection sort** on your list!
-
-        ![Nicki - Work it](http://33.media.tumblr.com/50d6e9b731ca0e739a04ed9255df3228/tumblr_mmjqcuNB9b1ql5yr7o1_500.gif)
       </script>
     </section>
 
