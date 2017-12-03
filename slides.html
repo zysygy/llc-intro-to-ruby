@@ -20,22 +20,18 @@
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
 
-<!--TODO
-Slide about arrays
--->
-
   <main>
     <section class="slide welcome">
       <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
 
       <div class="instructions no-bullet-list">
-        <!-- ADD WIFI INFO HERE -->
-        <!-- <h2>Get Connected</h2>
+        <!-- ADD WIFI INFO HERE
+        <h2>Get Connected</h2>
         <ul class="connected">
-          <li>Network: wifi network / Password: wifi password</li>
+          <li>Network:  / Password: </li>
         </ul>
-        <hr> -->
-
+        <hr>
+-->
         <h2>Download<br> & Install</h2>
         <ul class="downloads">
           <li>Learner files (zip file): <a href="http://bit.ly/2zv94Uo">http://bit.ly/2zv94Uo</a>
@@ -90,9 +86,8 @@ Slide about arrays
 
         We're going to be data scientists!
 
-        We'll learn to process, manipulate, and sort data using open datasets from [open.canada.ca](http://open.canada.ca). These programs that 'parse' data are used in web apps such as [Open Parliament](https://openparliament.ca/).
+        We'll be processing, manipulating, and sorting data using open datasets from [open.canada.ca](http://open.canada.ca). These programs that 'parse' data are used in web apps such as [Open Parliament](https://openparliament.ca/).
 
-        Today, you'll learn to 'think' like a computer as you gather insights from open data provided by The Government of Canada.
       </script>
     </section>
 
@@ -116,7 +111,6 @@ Slide about arrays
         <h2>Part 2</h2>
         <ul>
           <li>Libraries</li>
-          <li>Dictionaries</li>
           <li>Finding &amp; counting patterns</li>
           <li>Final Project!</li>
         </ul>
@@ -418,11 +412,6 @@ Slide about arrays
         You can store almost anything in a variable.
       </script>
     </section>
-<!-- Todo
-Variable names
-Cannot be certain keywords
-
--->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -446,15 +435,23 @@ Cannot be certain keywords
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Variable naming conventions
+        # Variable name rules and conventions
 
+        * use descriptive names (`height` rather than `x`)
+        * names are case-sensitive (`Height` is different from `height`)
         * can only use letters, numbers and the underscore (`_`); no spaces
         * words can be separated with an underscore `_`
         i.e. `ladies_learning_code`
         * cannot begin with a number
         i.e. `1day` gives you an error while `day1` is fine
+        * cannot be certain keywords (eg. `def`, `end`, `and`)
 
-        The names we&rsquo;ll use today are descriptive, but otherwise have no special meaning to Ruby.
+        ---
+        ###Resources
+
+        * [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide#naming)
+        * [Ruby Docs: Keywords](https://docs.ruby-lang.org/en/2.4.0/keywords_rdoc.html)
+
       </script>
     </section>
 
@@ -1271,7 +1268,8 @@ Mini tutorial of how it works
         ---
         ###Resource
 
-        https://docs.ruby.org/2/tutorial/controlflow.html#for-statements
+        * [Ruby Docs: For Loops](http://ruby-doc.org/core-2.4.2/doc/syntax/control_expressions_rdoc.html#label-for+Loop)
+
       </script>
     </section>
 
@@ -1287,7 +1285,10 @@ Mini tutorial of how it works
 
         This library will help us makes sense of the data contained in a CSV file to learn more from Canada's Open Data.
 
-        More info:<!-- .element: class="footnote" --> https://docs.ruby.org/2/library/csv.html
+        ---
+        ###Resource
+
+        * [Ruby Docs: CSV Class Library](http://ruby-doc.org/stdlib-2.4.2/libdoc/csv/rdoc/CSV.html)
       </script>
     </section>
 
@@ -1304,10 +1305,10 @@ Mini tutorial of how it works
         ```ruby
         irb(main):001:0> require 'csv'
         ```
-<!-- TEMP: I don't think you can do this in IRB
-        If you then type `csv.` and wait, it will show you a list of everything in that module.
--->
-        More info:<!-- .element: class="note" --> https://docs.ruby.org/2/tutorial/modules.html
+        ---
+        ###Resource
+
+        * [Ruby Docs: Require](https://ruby-doc.org/core-2.4.2/Kernel.html#method-i-require)
       </script>
     </section>
 
@@ -1326,7 +1327,7 @@ Mini tutorial of how it works
         * Then, we open the file
         * Then read it!
 
-        <a href="http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html#method-c-readlines">Ruby Docs</a> have a list of all functions available in CSV.
+        <a href="http://ruby-doc.org/stdlib-2.4.2/libdoc/csv/rdoc/CSV.html">Ruby Docs</a> have a list of all functions available in CSV.
 
         ```
         irb(main):001:0> require 'csv'
@@ -1337,6 +1338,10 @@ Mini tutorial of how it works
         <type 'dict'>
       </script>
     </section>
+
+    <!--TODO
+    Slide about arrays
+    -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1379,7 +1384,7 @@ Mini tutorial of how it works
 
         # Loop through each of the rows
 
-            # Compare the integer in the second (row[1]) with the integer in the third row (row[2])
+            # Compare the integer in the second column (row[1]) with the integer in the column (row[2])
 
                 # Print "The difference in emissions between 2002 and 2012 for [COUNTRY] is [NUMBER] kilotonnes!"
 
@@ -1506,13 +1511,13 @@ Mini tutorial of how it works
 
         ## Ruby
 
-        * is a programming language
-        * is what we've been learning today
+        * a programming language
+        * what we've been learning today
 
         ## Ruby on Rails
 
-        * is a web *framework* built with Ruby
-        * was extracted from work done on **Basecamp** at 37signals (2004)
+        * a web *framework* built using Ruby
+        * extracted from work done on **Basecamp** at 37signals (2004)
         * allows you to build fully functional web applications like **Twitter**
 
         Check out these resources for Ruby on Rails beginners
@@ -1539,6 +1544,7 @@ Mini tutorial of how it works
         ## Other:
 
         * [Ruby Gems](https://rubygems.org/)
+        *
         * Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
       </script>
     </section>
