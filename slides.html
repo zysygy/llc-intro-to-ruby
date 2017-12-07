@@ -139,12 +139,12 @@
       <script type="text/template">
         #2. Your computer is not very smart
 
-        Computers need:
+        You need to give exact instructions so the computer knows what to do
 
-        * *very specific* instructions
-        * instructions in a form that it can understand
+        ![](framework/img/workshop/ai_brain.png)
 
-        A programming language makes it easier for you to give the computer instructions.
+        ---
+        We use a **programming language** like Ruby to meet these criteria
       </script>
     </section>
 
@@ -154,7 +154,7 @@
 
         >It's made up of *simple elements*, that when *combined together*, are used to write a set of *instructions* that the computer then breaks down and interprets as its own language.
 
-        Programming languages have syntax and "grammar rules", just like human languages.
+        Programming languages have many concepts similar to human languages.
       </script>
     </section>
 
@@ -162,11 +162,11 @@
       <script type="text/template">
         #Why Ruby Is Awesome
 
-        *   Free
-        *   Open source
-        *   Made in Japan!
-        *   Great community
+        ![](framework/img/workshop/ruby-logo.png)
+
+        *   Open Source (Free!)
         *   Designed for readability
+        *   Great community
 
       </script>
     </section>
@@ -205,13 +205,14 @@
 
       You will need:
 
+      1. [Learner files](http://bit.ly/2zv94Uo) (contains exercise and solution files)
       1. Ruby 2.x.x installed
         * **Windows**: http://rubyinstaller.org/
         * **Mac**: https://www.ruby-lang.org/en/downloads/
         * Ruby comes by default on Mac OSX and the above link is for different versions!
       1. Text editor - today we'll be using **[Atom](https://atom.io/)**
-      1. Terminal/Console
-      1. [Learner files](http://bit.ly/2zv94Uo) (contains exercise and solution files)
+      1. Terminal/Console (default on most machines)
+
       </script>
     </section>
 
@@ -270,16 +271,18 @@
       </script>
     </section>
 
+<!-- TODO Add brief intro to command line to launch IRB, move command line to later-->
+
     <section class="slide irb" data-markdown>
       <script type="text/template">
 		#Interactive Ruby (IRB)
 
-		IRB is a tool that takes code one line at a time and gives a result immediately
+		IRB is a tool that takes code one line at a time and gives you an immediate result. It let's you
+    quickly try out some Ruby code
 
 		|Windows|Mac|
-        |---|---|
-		|Start Menu > Ruby > Interactive Ruby|Run `irb` on command line|
-		|||
+    |---|---|
+		|Start Menu > Ruby > Interactive Ruby|Run `irb` on command line (Terminal)|
 
 		Now that it's open and running, you'll see this:
 
@@ -304,21 +307,24 @@
       <script type="text/template">
         #Ruby can do math
 
-        Let's try some examples in the console.
-        Remember to input your commands after this line: `irb(main):001:0>`
+        Simply type the math expression you want Ruby to solve
 
-        Also, numbers don't need quotes like in the previous example. (More on this soon.)
+        Each number you type is considered a **piece of data**
 
+        * Remember to input your commands after this line: `irb(main):001:0>`
+        * Numbers don't need quotes like in the previous example
+
+        Addition
         ```
         irb(main):001:0> 2 + 2
         => 4
         ```
-
+        Multiplication
         ```
         irb(main):001:0> 2 * 15
         => 30
         ```
-
+        Division
         ```
         irb(main):001:0> 1 / 2
         => 0
@@ -332,11 +338,13 @@
       <script type="text/template">
         #Data Types
 
-        We just used the *integer* number **class**, but there are many more.
+        Every piece of data has a **data type** (also known as a **class**).
 
-        * Integer/Fixnum (whole numbers)
-        * Float (numbers containing decimals)
-        * String (words, sentences, literal text) - requires quotes
+        We just used the *integer* type, but there are many more.
+
+        * Integer/Fixnum (numbers without decimals)
+        * Float (numbers with decimals)
+        * String (words, sentences, general text) - **requires quotes**
         * Boolean (`true`, `false`)
         * [and many more!](https://en.wikibooks.org/wiki/Ruby_Programming/Data_types)
 
@@ -358,19 +366,19 @@
       <script type="text/template">
         #Fun with Data Types
 
-        Let's try some more examples in `irb`.
+        Let's try some more examples in `irb`
 
-        Integer (whole numbers)
+        Integer
         ```
         irb(main):001:0> 462 * 86
         => 39832
         ```
-        Float (numbers containing decimals)
+        Float
         ```
         irb(main):001:0> 3.2 / 2
         => 1.6
         ```
-        String (words, sentences, literal text)
+        String
         ```
         irb(main):001:0> "ladies" + "learning" + "code"
         => "ladieslearningcode"
@@ -393,7 +401,9 @@
         In programming, we usually want to store a value to use later.
         **Variables** store data in your computer&rsquo;s memory.
 
-        Use equal (`=`) symbol to *assign* a value to a variable name. Use the variable name again to access it
+        Use equal (`=`) symbol to *assign* a value to a variable name. Use the variable name again to access it.
+
+        Think of variable names as labels for your data so you can easily identify what it is
 
         Let's go over some examples:
 
@@ -435,7 +445,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Variable name rules and conventions
+        #Variable name rules and conventions
 
         * use descriptive names (`height` rather than `x`)
         * names are case-sensitive (`Height` is different from `height`)
@@ -461,43 +471,48 @@ How it's made, assembly line clip
 
     <section class="slide" data-markdown>
       <script type="text/template">
-		#Functions
+        #Functions
 
-		Functions are bundles of code that can be re-used. Think of them as a set of instructions that you can easily ask Ruby to follow.
+        Functions are bundles of code that can be re-used
 
-		Here's the general structure
+        Here's the general structure
 
-		```ruby
-			def functionName (arg1, arg2)
-			  *do some stuff here*
-			  return something
-			end
+        ```ruby
+        def functionName (arg1, arg2)
+          *do some stuff here*
+          return something
+        end
         ```
 
-		* Created by wrapping code between `def` and `end`
-		* Directly after `def` is the name of the function. Function names follow the same rules variables
-		* **Arguments** are data given in parentheses the function uses to do work
-		* The **Return Value** is a result the function produces after it's done
+        A basic guide on how functions work
+
+        1. Take in some data to work on
+        1. Do some work
+        1. Return a result back
 
       </script>
     </section>
-
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
         #Define the function
 
-        This doesn't actually run the code.  We're just telling the computer what to expect.
-
         In the below example, the `add` function takes `a` and `b` as arguments and will **return** the result.
 
         ```ruby
         irb(main):001:0> def add(a, b)
-        ...     return a + b
-        ...     end
-        ...
+        irb(main):001:0> return a + b
+        irb(main):001:0> end
         ```
+        * Created by typing `def` to tell Ruby you're creating a new function
+        * After `def` is the name of the function
+          * Function names follow the same rules [variable names](TODO)
+        * **Arguments** are wrapped in parentheses
+          * Data passed in is automatically stored in these variables
+          * The number of arguments (can be 0) and what they're called is up to you
+        * The **Return Value** is the data the function produces after it's done
+
+
       </script>
     </section>
 
@@ -518,13 +533,21 @@ How it's made, assembly line clip
         irb(main):001:0> add(3, 4)
         => 7
         ```
+
+        This example was trivial, but imagine a function with dozens of lines and that needs to be called many times. Functions are great for reducing clutter and making it easier to update your code.
+        <!--Code example with and without functions-->
       </script>
     </section>
+
+<!-- TODO move comments slide here-->
+
     <section class="slide" data-markdown>
       <script type="text/template">
         #Built-in Functions
 
-        Ruby comes with a whole set of predefined functions.  These are sets of code that are so regularly used by most programmers that it makes sense for them to be part of the programming language itself.
+        Ruby comes with a whole set of predefined functions.
+
+        These functions perform jobs that are commonly used by most programmers so the designers of Ruby made them come standard with language.
 
         These functions are sometimes called and used a bit differently than functions you write yourself.
 
@@ -537,29 +560,50 @@ How it's made, assembly line clip
 
         To use these functions, simply type either `puts` or `print` and then the data you want to show.
 
-        The difference between `puts` and `print` is `puts` adds a new line to end of the output and `print` does not.
+        The only difference between these two is that `puts` adds a new line to end of the output and `print` does not.
 
         ```
-        irb(main):001:0> puts 2 + 2
+        irb(main):001:0> puts 4
         4
         => nil
         ```
+
         ```
-        irb(main):001:0> print 2 + 2
+        irb(main):001:0> print 4
         4=> nil
         ```
-        Notice the `nil` remains on the same line as the response?
 
-        Let's try it in IRB!
-        ```
-        irb(main):001:0> print "Hello World!"
-        Hello World! => nil
-        ```
-        ```
-        irb(main):001:0> print 2 + 2
-        4 => nil
-        ```
+      </script>
+    </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #More about `puts` and `print`
+
+      Ruby will try to fully evaluate all of the calculations and functions first
+
+      ```
+      irb(main):001:0> puts 2 + 2 * 3 #Remember order of operations!
+      8
+      => nil
+      ```
+
+      Using `puts` or `print` is not the same as typing data into IRB
+
+      ```ruby
+      irb(main):001:0> "Hello!"
+      => "Hello!"
+      ```
+
+      ```ruby
+      irb(main):001:0> puts "Hello!"
+      Hello!
+      => nil
+      ```
+
+      Immediately throwing the data back to you is a quirk of IRB. Once you run programs outside of IRB, you will want to use `puts` or `print` to write something on the screen.
+
+      What is that `nil` though?
       </script>
     </section>
 
