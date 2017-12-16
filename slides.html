@@ -51,7 +51,7 @@
       </div>
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
-        <p class="left">Content created by <a href="https://twitter.com/EssefBeck" target="_blank">Sarah Beck</a> and <a href="https://twitter.com/dear_trudence" target="_blank">Trudy MacNabb</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="left">Content created by Sarah Beck and <a href="https://twitter.com/dear_trudence" target="_blank">Trudy MacNabb</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a>. Modified by Allen Chen</p>
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
     </section>
@@ -75,7 +75,7 @@
       </div>
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
-        <p class="left">Content created by <a href="https://twitter.com/EssefBeck" target="_blank">Sarah Beck</a> and <a href="https://twitter.com/dear_trudence" target="_blank">Trudy MacNabb</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="left">Content created by Sarah Beck and <a href="https://twitter.com/dear_trudence" target="_blank">Trudy MacNabb</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code.</a> Modified by Allen Chen.</p>
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
     </section>
@@ -226,51 +226,6 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #The Command Line
-
-        Most people these days use graphical interfaces (GUIs) to work with computers.
-
-        Before these existed, people used **command-line interfaces (CLIs)**.
-
-        Instead of clicking on icons and dragging files around, commands are issued to the computer via text instructions
-
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Some Command Line Basics
-
-        **Starting Command Line**
-
-        | Windows | Mac |
-        |---|---|
-        |Start Menu > Run > cmd|Applications > Utilities > Terminal|
-
-        **Useful Commands**
-
-        |Action| Mac | Windows|
-        |---|:---|:---|
-        |Show current location|`pwd`|`cd`|
-        |Show folder contents| `ls` |`dir`|
-        |Change folder|`cd` *destination*|`cd` *destination*|
-        |Run a Ruby program|`ruby` *file*.rb|`ruby` *file*.rb|
-
-        **Other Useful Tips**
-
-        *   The **Tab** key will auto-complete a partially-typed folder or file name
-        *   **Ctrl+C** clears a whole line
-        *   Always make sure you&rsquo;re in the right folder when running a program
-
-        ###Resources
-        * [Don't Fear the Command Line](http://readwrite.com/2014/07/18/command-line-tutorial-intro)
-        * [Codecademy: Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
-
-      </script>
-    </section>
-
 <!-- TODO Add brief intro to command line to launch IRB, move command line to later-->
 
     <section class="slide irb" data-markdown>
@@ -409,17 +364,28 @@
 
         ```ruby
         irb(main):001:0> x = 5
-        irb(main):001:0> y = 4
-        irb(main):001:0> x * y
+        irb(main):002:0> y = 4
+        irb(main):003:0> x * y
         20
+        ```
+
+        Results can be stored directly in a variable
+
+        ```ruby
+        irb(main):001:0> m = 2
+        irb(main):002:0> b = -4
+        irb(main):003:0> x = 6
+        irb(main):004:0> y = m*x + b
+        irb(main):005:0> y
+        => 8
         ```
 
         ```ruby
         irb(main):001:0> today = "Saturday"
-        irb(main):001:0> print "Today is " + today
+        irb(main):002:0> print "Today is " + today
         Today is Saturday
         ```
-        You can store almost anything in a variable.
+        You can store almost anything in a variable
       </script>
     </section>
 
@@ -488,7 +454,7 @@ How it's made, assembly line clip
 
         1. Take in some data to work on
         1. Do some work
-        1. Return a result back
+        1. Return a result
 
       </script>
     </section>
@@ -534,7 +500,9 @@ How it's made, assembly line clip
         => 7
         ```
 
-        This example was trivial, but imagine a function with dozens of lines and that needs to be called many times. Functions are great for reducing clutter and making it easier to update your code.
+        This example was simple, but imagine a function with dozens of lines and that needs to be called many times.
+
+        Functions are great for reducing clutter and making it easier to update your code.
         <!--Code example with and without functions-->
       </script>
     </section>
@@ -609,13 +577,15 @@ How it's made, assembly line clip
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #What's nil? It's nothing, don't worry.
+        # `nil`? It's nothing, don't worry.
 
         Remember how **Functions** always return 1 thing?
 
         Well, `print` and `puts` are functions.  However, since they only print to the screen they *technically* don't return anything.
 
         Since Ruby always needs to return something, it returns `nil`, which is computer for **nothing**.
+
+        `nil` is not the same as an empty string (`""`)
 
         ![](http://prajer.org/nothing.gif)
 
@@ -647,15 +617,16 @@ How it's made, assembly line clip
       <script type="text/template">
         #Why did that error happen?
 
-        Ruby needs to know the **type** of data the value is to figure out how to work with it.  Let&rsquo;s look at that error again.
+        Ruby needs to know the **type** of data the value is to figure out how to work with it.
+
+        Let&rsquo;s look at that error again.
 
         ```ruby
         irb(main):001:0> print 2 + "2"
         TypeError: String cannot be coerced into Fixnum
         ```
 
-        * The first `2`, inside of `print 2 + "2"` is an integer.
-        * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
+        * The first `2` is an integer. `"2"` enclosed in the quotes is a **string**
         * Ruby can&rsquo;t add a number and string, so it spits out an error.
 
       </script>
@@ -669,16 +640,17 @@ How it's made, assembly line clip
       <script type="text/template">
         #Typecasting: Strings to Numbers
 
-        Ruby can convert the string `"2"` into a number and *change the type*.
+        Ruby can convert the string `"2"` into a number
 
-        To change the string to an integer (whole number) using the `.to_i` function.  Try it in your console.
+        Change the string to an integer (whole number) using the `.to_i` function
 
         ```
         irb(main):001:0> print 2 + "2".to_i
         4 => nil
         ```
-        `to_i` is another predefined function in Ruby.
-        It converts a string to an integer.
+        The `to_i` function converts a piece of data into an integer. After the `"2"` gets converted, Ruby is able to complete the addition
+
+        Bonus: What happens if you try to convert something like ``"Ruby"``?
 
       </script>
     </section>
@@ -687,9 +659,9 @@ How it's made, assembly line clip
       <script type="text/template">
         #Dot Notation
 
-        The data conversion functions are example of using **dot notation** for calling functions.
+        `"to_i"` is an example of a function that gets called with **dot notation**.
 
-        In other words, add a period then the function name *after* the object you want to call it on.
+        In short, these functions are called by adding a period then the function name *after* the object you want to call it on.
 
         Class Checks
 
@@ -715,13 +687,18 @@ How it's made, assembly line clip
         irb(main):001:0> print 1 / 2
         0 => nil
         ```
-        This happens because Ruby sees 2 integers and will return an integer. Integer **classes** don&rsquo;t have decimal places, so the numbers must be converted to **floats** instead.
+        Ruby sees 2 integers and thus assumes you want an integer in return.
 
-        Use dot notation and the `.to_f` function.
+        Since integers can&rsquo;t have decimals, we must use **floats** instead.
+
+        Use dot notation and the `.to_f` function to convert the integers to floats.
+
         ```
         irb(main):001:0> print 1.to_f / 2.to_f
         0.5 => nil
         ```
+
+        Bonus: What happens if you only convert one of the integers before dividing?
 
       </script>
     </section>
@@ -730,9 +707,11 @@ How it's made, assembly line clip
       <script type="text/template">
         #Typecasting: Numbers to Strings
 
-        Ruby can also be used to convert numbers to strings.
+        We've seen **strings** being converted into **integers** and **integers** into **floats**.
 
-        ```
+        As you might have guessed, numbers can also be turned into strings.
+
+        ```ruby
         irb(main):001:0> print 3 + " items in my bento!"
         TypeError: String cant be coerced into Fixnum
 
@@ -745,7 +724,11 @@ How it's made, assembly line clip
 
         ```
 
-        The ability to tell Ruby to change the type will come in handy later.
+        ```ruby
+        irb(main):001:0> price = 12.45
+        irb(main):002:0> print "The total is " + price.to_s + " after taxes."
+        The total is 12.45 after taxes. => nil
+        ```
 
       </script>
     </section>
@@ -831,13 +814,11 @@ Mini tutorial of how it works
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Working with a Text Editor
+        #Writing programs in files
 
-        Typing into the console is fine to start, but do you really want to type your program every time you run it?
+        Using IRB is nice for quickly trying out code, but what if you're working on a more complex program or want to share and organize your code?
 
-        Let's open our **exercises** folder to get ready to work in the text editor instead of the console. This will also make it easier to write larger blocks of code.
-
-        Inside of the folder you downloaded today, there a few other folders.
+        Let's open our **exercises** folder to get ready to work in Atom (or other text editor) instead of IRB.
 
         ```
         llc-intro-to-ruby-data-master
@@ -866,9 +847,6 @@ Mini tutorial of how it works
     <section class="slide" data-markdown>
       <script type="text/template">
         #Class Exercise 1: Hello World!
-
-        Ruby can run your code from a file with a `.rb` **extension**
-        *(<!-- .element: class="note" -->the letters after `.` in a filename tell your computer which program can run it)*
 
         Let&rsquo;s create our first Ruby file!
 
@@ -902,19 +880,55 @@ Mini tutorial of how it works
       <script type="text/template">
         #But how do we run this file?
 
-        We'll need to use the console and couple of **command line** instructions.
+        Just like you open .doc files with something like MS Word, Ruby can run your code from a file with a `.rb` **extension**. The letters after `.` in a filename indicate which programs will run it
 
-        `cd` means **Change Directory** and is used to move through the file structure
+        We'll need find it our file and run it from the **command line**.
+      </script>
+    </section>
 
-        `ls` is used to **List** the files in the current directory
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #The Command Line
 
-        ---
+        Most people these days use graphical interfaces (GUIs) to work with computers.
+
+        Before these existed, people used **command-line interfaces (CLIs)**.
+
+        Instead of clicking on icons and dragging files around, commands are issued to the computer via text instructions
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Some Command Line Basics
+
+        **Starting Command Line**
+
+        | Windows | Mac |
+        |---|---|
+        |Start Menu > Run > cmd|Applications > Utilities > Terminal|
+
+        **Useful Commands**
+
+        |Action| Mac | Windows|
+        |---|:---|:---|
+        |Show current location|`pwd`|`cd`|
+        |Show folder contents| `ls` |`dir`|
+        |Change folder|`cd` *destination*|`cd` *destination*|
+        |Run a Ruby program|`ruby` *file*.rb|`ruby` *file*.rb|
+        |Clear the screen|`clear`|`cls`|
+
+        **Other Useful Tips**
+
+        *   The **Tab** key will auto-complete a partially-typed folder or file name
+        *   **Ctrl+C** clears a whole line or cancels a running program
+        *   Always make sure you&rsquo;re in the right folder when running a program
+
         ###Resources
         * [Don't Fear the Command Line](http://readwrite.com/2014/07/18/command-line-tutorial-intro)
         * [Codecademy: Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
       </script>
     </section>
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -972,9 +986,9 @@ Mini tutorial of how it works
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Pro Tip! Use Comments
+        #Leave a comment
 
-        * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
+        * Programmers use **comments** to leave notes for themselves (and other people reading their code in the future)
         * Good comments add information that isn&rsquo;t immediately obvious
         * You&rsquo;ll see more comments throughout the exercises
         * Feel free to add your own!
@@ -989,6 +1003,8 @@ Mini tutorial of how it works
 <!-- -------------------- -->
 <!-- Conditionals & Booleans -->
 <!-- -------------------- -->
+
+<!--Food Court Example-->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1087,6 +1103,8 @@ Mini tutorial of how it works
             puts "Dress normally :)"
         end
         ```
+        What happens if a person gives "Cold" or "COLD" instead of "cold"?
+
       </script>
     </section>
 
@@ -1371,14 +1389,12 @@ Mini tutorial of how it works
         * Then, we open the file
         * Then read it!
 
-        <a href="http://ruby-doc.org/stdlib-2.4.2/libdoc/csv/rdoc/CSV.html">Ruby Docs</a> have a list of all functions available in CSV.
-
         ```
         irb(main):001:0> require 'csv'
         irb(main):001:0> emissions_file = CSV.open('./exercises/no-emissions.csv')
         irb(main):014:0> emissions_file.read
         ```
-        ** Notice how the data is parsed according to the commas? This means we can read the data by column or by row!
+        Notice how the data is parsed according to the commas? This means we can read the data by column or by row!
         <type 'dict'>
       </script>
     </section>
@@ -1588,7 +1604,6 @@ Mini tutorial of how it works
         ## Other:
 
         * [Ruby Gems](https://rubygems.org/)
-        *
         * Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
       </script>
     </section>
